@@ -1,7 +1,7 @@
 
 ---
 
-### 🐍 `autism_gene_checker.py`
+### `autism_gene_checker.py`
 ```python
 from Bio import Entrez
 
@@ -25,14 +25,14 @@ if record["IdList"]:
 
     summary = records[0].get("Entrezgene_summary", "No summary available.")
 
-    print(f"\n🧬 Gene found: {gene}")
-    print(f"📄 Summary from NCBI:\n{summary}")
+    print(f"\n Gene found: {gene}")
+    print(f" Summary from NCBI:\n{summary}")
 
     # Optional check: if 'autism' is mentioned
     if "autism" in summary.lower():
-        print("\n✅ This gene is likely associated with autism (mentioned in summary).")
+        print("\n This gene is likely associated with autism (mentioned in summary).")
     else:
-        print("\n⚠️ No direct mention of autism in this summary — further research needed.")
+        print("\n⚠ No direct mention of autism in this summary — further research needed.")
 
 else:
-    print("\n❌ Gene not found in NCBI for Homo sapiens.")
+    print("\n Gene not found in NCBI for Homo sapiens.")
